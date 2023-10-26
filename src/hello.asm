@@ -1,5 +1,6 @@
 section .data
-    hello db 'Hello, World!',0
+    hello db `Hello, World!\n`,0
+    helloLen equ $-hello
 
 section .text
     global _start
@@ -9,7 +10,7 @@ _start:
     mov eax, 4         ; syscall number for sys_write
     mov ebx, 1         ; file descriptor 1 (stdout)
     mov ecx, hello     ; pointer to the string
-    mov edx, 13        ; string length
+    mov edx, helloLen  ; string length
     int 0x80           ; interrupt to invoke syscall
 
     ; exit(0)
