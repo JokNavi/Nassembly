@@ -3,8 +3,8 @@ Learning nasm assembly
 
 ## Run Nassembly
 
-For my system/setup only*
+1. `./build.sh src/functions.asm`
+2. `./functions`
 
-1. `nasm -f elf64 src/hello.asm`
 
-2. `ld -o target/hello src/hello.o`
+
